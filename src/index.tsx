@@ -9,6 +9,21 @@ createServer({
 
   },
 
+  seeds(server) {
+    server.db.loadData({
+      transactions: [
+        {
+          id: 1,
+          title: 'App developer',
+          type: 'deposit',
+          category: 'Dev',
+          amount: 10000,
+          createdAt: new Date('2023-01-23 22:50')
+        }
+      ]
+    });
+  },
+
   routes() {
     this.namespace = 'api';
 
